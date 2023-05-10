@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <div id="app">
+        <input v-model="message" type="text">
+        <button @click="aggiungi()">Aggiugni</button>
+        <ul>
+            <li :class='(todo.done) ? "testo-barrato" : "testo-normale"' v-for="(todo,i) in list">
+                {{todo.text}}
+                <button @click="svolto(i)">Svolto</button>
+                <button @click="remove(i)">X</button>
+            </li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
